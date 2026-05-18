@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Madamé ji 💖</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Indie+Flower&family=Pacifico&family=Roboto+Slab:wght@400;700&family=Press+Start+2P&family=Sacramento&family=Varela+Round&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:"Varela Round",sans-serif;
+
+  background:linear-gradient(
+    135deg,
+    #050816,
+    #0b1d3a,
+    #132b52,
+    #1e3f73
+  );
+
+  min-height:100vh;
+  overflow-y:auto;
+  overflow-x:hidden;
+
+  color:white;
+  text-align:center;
+}
+
+/* Glass card */
+.card{
+  background:rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(14px);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  border-radius:20px;
+
+  padding:25px;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.45),
+    0 0 25px rgba(100,160,255,0.12);
+
+  max-width:500px;
+  margin:auto;
+
+  font-family:"Varela Round",sans-serif;
+}
+
+/* Screens */
+.screen{
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%);
+
+  display:none;
+
+  width:90%;
+  max-width:600px;
+
+  max-height:90vh;
+  overflow-y:auto;
+  padding:20px 0;
+}
+
+/* Buttons */
+.btn{
+  padding:14px 25px;
+
+  border:none;
+  border-radius:30px;
+
+  background:linear-gradient(
+    90deg,
+    #4da3ff,
+    #6a7dff
+  );
+
+  color:white;
+
+  font-size:16px;
+
+  cursor:pointer;
+
+  margin-top:15px;
+
+  font-family:"Varela Round",sans-serif;
+
+  box-shadow:
+    0 0 15px rgba(100,160,255,0.35);
+
+  transition:0.3s ease;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+
+  box-shadow:
+    0 0 25px rgba(120,180,255,0.55);
+}
+
+/* Floating hearts */
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:20px;
+  animation:floatUp 6s linear infinite;
+  opacity:0.7;
+}
+@keyframes floatUp{
+  from{transform:translateY(0)}
+  to{transform:translateY(-110vh);opacity:0}
+}
+
+/* Menu fixed buttons */
+.menu-fix{
+  position:absolute;
+  top:0;
+  left:0;
+  transform:none;
+  width:100%;
+  height:100%;
+}
+.menu-heading{
+  position:absolute;
+  top:5%;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:26px;
+  font-weight:bold;
+  font-family:"Press Start 2P", cursive;
+}
+.menu-btn{
+  position:absolute;
+  background:rgba(255,255,255,0.25);
+  backdrop-filter:blur(10px);
+  padding:15px 22px;
+  border-radius:50px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  cursor:pointer;
+  font-size:16px;
+  font-weight:bold;
+  color:white;
+  transition:0.3s;
+  font-family:"Indie Flower", cursive;
+}
+.menu-btn:hover{
+  background:rgba(255,255,255,0.35);
+  transform:scale(1.05);
+}
+
+/* Return button inside sections */
+.back{
+  display:block;
+  margin:20px auto 0 auto;
+  padding:12px 28px;
+  border:none;
+  border-radius:30px;
+  background:#ff2f68;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  font-family:"Varela Round", sans-serif;
+}
+.back:hover{background:#ff0040; transform:scale(1.05);}
+
+/* Fireworks */
+.firework{
+  position:fixed;
+  width:8px;
+  height:8px;
+  background:white;
+  border-radius:50%;
+  animation:explode 1s linear infinite;
+}
+@keyframes explode{
+  from{transform:scale(1)}
+  to{transform:scale(5);opacity:0}
+}
+
+/* Memories font */
+.memory-line{
+  font-size:20px;
+  font-weight:bold;
+  min-height:80px;
+  opacity:0;
+  transition:opacity 0.5s ease;
+  line-height:1.6;
+  text-align:center;
+  font-family:"Roboto Slab", serif;
+}
+
+/* Letter font */
+.letter-card {
+  background-color: #f8ecd8;
+  background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
+  padding: 35px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  line-height: 1.8;
+  color: #4b3f2f;
+  position: relative;
+  font-family:"Sacramento", cursive;
+}
+.letter-card h2{text-align:center; margin-bottom:20px; font-family:"Pacifico", cursive;}
+.letter-card p{font-size:19px;}
+
+/* Stickers font */
+#stickers .card h2{font-family:"Amatic SC", cursive; font-size:26px;}
+#stickers #caption{font-family:"Indie Flower", cursive; font-size:20px;}
+
+/* Proposal font */
+#proposal h2, #proposeSticker h2{font-family:"Pacifico", cursive;}
+.sticker-text{font-family:"Amatic SC", cursive; font-size:22px; font-weight:bold; margin-top:10px; color:white;}
+
+/* Final / Nickname fonts */
+#acceptedPage .card h1,#finalMessage h1{font-family:"Press Start 2P", cursive;}
+#finalMessage p{font-family:"Indie Flower", cursive; font-size:25px;}
+.nickname{font-family:"Amatic SC", cursive;}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic1" loop>
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<!-- START SCREEN -->
+<div id="startScreen" class="screen" style="display:block;">
+  <div class="card" style="font-family:'Indie Flower', cursive;">
+    <h1>For The Special One 💖</h1>
+    <button class="btn" onclick="showGift()">START</button>
+  </div>
+</div>
+<!-- 🎁 GIFT SCREEN -->
+<div id="giftScreen" class="screen">
+  <div class="gift-container" onclick="openGiftBox()">
+
+    <div class="gift-glow"></div>
+
+    <div class="gift-box">
+      <div class="gift-lid"></div>
+      <div class="gift-body"></div>
+      <div class="gift-ribbon-v"></div>
+      <div class="gift-ribbon-h"></div>
+    </div>
+
+    <h2 class="gift-text">Tap To Open Your Birthday Gift 🎂💖</h2>
+
+  </div>
+</div>
+<!-- INTRO SCREEN -->
+<div id="introScreen" class="screen">
+  <div class="card" style="font-family:'Indie Flower', cursive;">
+   <div class="birthday-cute">
+     <div class="cake">🎂</div>
+     <div class="bday-text">
+    Happy Birthday<br>
+    Madamé Ji 💙✨
+    </div>
+    <div class="stars">💫 ⭐ ✨ ⭐ 💫</div>
+    </div>
+    <button class="btn" style="margin-top:5px;" onclick="showMenu()">NEXT ➡️</button>
+    <button class="btn" style="margin-top:10px;" onclick="startMenuMusic()">Start Music 🎵</button>
+  </div>
+</div>
+<!-- MENU SCREEN -->
+<div id="menuScreen" class="screen menu-fix">
+  <h2 class="menu-heading"><b><u><i>Explore Below</i></u></b></h2>
+  <div class="menu-btn" style="top:75%; left:50%; transform:translateX(-50%);" onclick="startBgMusic()">▶️ Start Background Music</div>
+  <div class="menu-btn" style="top:30%; left:05%;" onclick="showMemories()">💖 How I Found U!</div>
+  <div class="menu-btn" style="top:45%; right:09%;" onclick="openSection('loveLetter')">✉️ A Letter </div>
+  <div class="menu-btn" style="top:45%; left:6.5%;" onclick="openSection('music')">🎵 Songs for u</div>
+  <div class="menu-btn" style="top:60%; left:07%;" onclick="openSection('stickers')"> 📄 Birthday wishcard!!</div>
+  <div class="menu-btn" style="top:30%; right:05%;" onclick="openSection('proposal')">💌 Special Request</div>
+  <div class="menu-btn" style="top:60%; right:07%;" onclick="openSection('final')"> 😆 Just an Extra...</div>
+</div>
+<script>
+  function startBgMusic(){
+  const bg = document.getElementById("bgMusic1");
+  if(bg.paused){
+    bg.play().catch(()=>{}); // play safely
+  }
+}</script><script>
+function showGift(){
+  hideAllScreens();
+  document.getElementById("giftScreen").style.display = "block";
+}
+
+function openGiftBox(){
+
+  const gift = document.querySelector(".gift-container");
+
+  gift.classList.add("gift-open");
+
+  // Birthday particles
+  for(let i=0;i<30;i++){
+
+    const particle = document.createElement("div");
+
+    particle.innerHTML =
+      ["🎉","✨","💖","🎂","🎊"][Math.floor(Math.random()*5)];
+
+    particle.style.position = "fixed";
+    particle.style.left = Math.random()*100 + "vw";
+    particle.style.top = Math.random()*100 + "vh";
+    particle.style.fontSize =
+      (20 + Math.random()*20) + "px";
+
+    particle.style.zIndex = "9999";
+    particle.style.animation =
+      "floatUp 4s linear forwards";
+
+    document.body.appendChild(particle);
+
+    setTimeout(()=>{
+      particle.remove();
+    },4000);
+  }
+
+  // Open intro page
+  setTimeout(()=>{
+
+    document.getElementById("giftScreen").style.display = "none";
+
+    document.getElementById("introScreen").style.display = "block";
+
+  },1700);
+}
+</script>
+
+<!-- MEMORIES SCREEN -->
+<div id="memories" class="screen" style="display:none;">
+  <div class="card">
+    <h2><u> HOW WE MET 🎬</U></h2>
+    <p id="memoryText" class="memory-line"></p>
+    <button id="memBackBtn" class="back" style="display:none;" onclick="backToMenu()">💖 🔙</button>
+        <button class="back" onclick="backToMenu()">Stop Now</button>
+  </div>
+</div>
+<style>
+/* Cute Birthday Intro */
+
+.birthday-cute{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  animation:floatBirthday 3s ease-in-out infinite;
+}
+
+.cake{
+  font-size:90px;
+  filter:drop-shadow(0 0 18px rgba(120,180,255,0.6));
+}
+
+.bday-text{
+  margin-top:10px;
+  font-size:34px;
+  line-height:1.4;
+  font-family:"Pacifico", cursive;
+
+  background:linear-gradient(
+    90deg,
+    #b7d7ff,
+    #d7e8ff,
+    #7db5ff
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  text-shadow:
+    0 0 15px rgba(120,180,255,0.35);
+}
+
+.stars{
+  margin-top:12px;
+  font-size:28px;
+  letter-spacing:8px;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes floatBirthday{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+@keyframes twinkle{
+  from{
+    opacity:0.5;
+  }
+  to{
+    opacity:1;
+    transform:scale(1.08);
+  }
+}
+/* ===== GIFT SCREEN ===== */
+
+#giftScreen{
+  background:
+    radial-gradient(circle at top,#18355e,#060c18 75%);
+}
+
+/* Floating effect */
+.gift-container{
+  position:relative;
+  cursor:pointer;
+  animation:floatGift 3s ease-in-out infinite;
+}
+
+@keyframes floatGift{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
+
+/* Glow */
+.gift-glow{
+  position:absolute;
+  width:240px;
+  height:240px;
+  background:
+    radial-gradient(circle,
+    rgba(255,105,180,0.45),
+    transparent 70%);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  filter:blur(20px);
+  animation:pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow{
+  0%,100%{
+    transform:translate(-50%,-50%) scale(1);
+  }
+  50%{
+    transform:translate(-50%,-50%) scale(1.15);
+  }
+}
+
+/* Box */
+.gift-box{
+  position:relative;
+  width:180px;
+  height:180px;
+  margin:auto;
+}
+
+/* Body */
+.gift-body{
+  position:absolute;
+  bottom:0;
+  width:180px;
+  height:130px;
+  background:
+    linear-gradient(135deg,#ff4d88,#ff86b2);
+  border-radius:14px;
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.45);
+}
+
+/* Lid */
+.gift-lid{
+  position:absolute;
+  top:20px;
+  left:-10px;
+  width:200px;
+  height:45px;
+  background:
+    linear-gradient(135deg,#ff6fa7,#ff9ec4);
+  border-radius:14px;
+  z-index:2;
+  transition:1s ease;
+  transform-origin:left bottom;
+}
+
+/* Ribbons */
+.gift-ribbon-v{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:24px;
+  height:180px;
+  background:#ffe066;
+  z-index:3;
+}
+
+.gift-ribbon-h{
+  position:absolute;
+  top:58px;
+  width:180px;
+  height:24px;
+  background:#ffe066;
+  z-index:3;
+}
+
+/* Open */
+.gift-open .gift-lid{
+  transform:
+    rotate(-35deg)
+    translate(-35px,-35px);
+}
+
+/* Text */
+.gift-text{
+  margin-top:35px;
+  font-size:28px;
+  color:white;
+  font-family:"Pacifico", cursive;
+  text-shadow:0 0 15px rgba(255,255,255,0.35);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+#memoryText{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+
+  font-size: 24px;
+  line-height: 1.8;
+
+  color: #f5e9ff;
+
+  text-align: center;
+  transition: opacity 0.5s ease;
+
+  letter-spacing: 0.5px;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.15);
+}
+
+.memory-title{
+  display: block;
+
+  font-family: 'Cinzel', serif;
+  font-size: 38px;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, #ffb6f9, #c9a7ff, #8ec5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-align: center;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 14px;
+
+  text-shadow:
+    0 0 15px rgba(201,167,255,0.35),
+    0 0 30px rgba(142,197,255,0.15);
+}
+#giftScreen.screen{
+  max-width:none;
+  max-height:none;
+  overflow:visible;
+}.gift-container{
+  overflow:visible;
+}
+</style>
+<script>
+// Memory lines
+const memories = [
+  "<span class='memory-title'>The Beginning of 2024 🌙</span>",
+  "Back in 2024, I randomly opened Instagram like any normal day.",
+  "Nothing special. Nothing planned.",
+  "Just another account among millions of people scrolling endlessly.",
+  "I never knew one small interaction there would slowly become something so important in my life.",
+
+  "<span class='memory-title'>A Stranger Named Simran ✨</span>",
+  "One day, I came across a girl named Simran.",
+  "At first, we were complete strangers.",
+  "Just simple replies, random reactions, and small conversations here and there.",
+  "No expectations.",
+  "No idea that we would ever become this close.",
+
+  "<span class='memory-title'>Random Chats Turning Into Daily Talks 💬</span>",
+  "Slowly, those small conversations became longer.",
+  "Random chats turned into daily texting.",
+  "From simple 'hi' messages...",
+  "To sharing stupid memes, random thoughts, and late-night voice notes.",
+  "Everything between us started feeling natural.",
+
+  "<span class='memory-title'>Late Nights & Comfort 🌃</span>",
+  "Weeks passed… then months.",
+  "And somehow, late-night talks became our thing.",
+  "Even after tiring days, talking to her felt peaceful.",
+  "There were endless kalesh, teasing, dramatic moments, and silly arguments.",
+  "But somehow, every conversation made our bond stronger.",
+
+  "<span class='memory-title'>Becoming Best Friends 🤍</span>",
+  "The funniest part is…",
+  "We never officially decided to become best friends.",
+  "It just happened naturally.",
+  "One day she was just another person on Instagram.",
+  "And before I realized it...",
+  "She had become one of the most important parts of my daily life.",
+
+  "<span class='memory-title'>The Present 🌻</span>",
+  "Now every day feels a little lighter because of her presence.",
+  "Talking to her brings comfort in a way that’s hard to explain.",
+  "She makes life feel calmer, happier, and somehow better just by being in it.",
+
+  "Among all the random people social media introduces us to…",
+  "I’m truly grateful that I found Simran. 🌙",
+  "And this story…",
+  "Is still being written. ❤️"
+];
+
+let memIndex = 0;
+let memoryTimeout;
+
+// Show Memories Screen
+function showMemories() {
+  hideAllScreens();
+
+  document.getElementById("memories").style.display = "flex";
+  document.getElementById("memoryText").innerHTML = "";
+  document.getElementById("memBackBtn").style.display = "none";
+
+  memIndex = 0;
+
+  nextMemory();
+}
+
+// Display memories one by one
+function nextMemory() {
+  const textBox = document.getElementById("memoryText");
+
+  if (memIndex >= memories.length) {
+    document.getElementById("memBackBtn").style.display = "block";
+    return;
+  }
+
+  textBox.style.opacity = 0;
+
+  setTimeout(() => {
+    textBox.innerHTML = memories[memIndex];
+    textBox.style.opacity = 1;
+
+    memIndex++;
+
+    memoryTimeout = setTimeout(nextMemory, 2800);
+
+  }, 1500);
+}
+
+// Hide all screens
+function hideAllScreens() {
+  clearTimeout(memoryTimeout);
+
+  document.querySelectorAll(".screen").forEach(screen => {
+    screen.style.display = "none";
+  });
+}
+// Back to menu
+function backToMenu(){
+  hideAllScreens();
+  document.getElementById("menuScreen").style.display = "block";
+}
+</script>
+<!-- MUSIC SECTION -->
+<div id="music" class="screen">
+  <div class="card">
+    <h2>The Rythme 🎵</h2>
+    <p>The songs that remind me of u whenever u hear them... </p>
+    <!-- PASSWORD -->
+    <input id="musicPass" type="password" placeholder="Enter password"
+      style="padding:8px;border-radius:20px;border:none;text-align:center;">
+    <br><br>
+    <button class="btn" onclick="unlockMusic()">Unlock 🎵</button>
+    <p id="passMsg" style="margin-top:10px;"></p>
+    <hr style="opacity:0.3">
+      <!-- SONG 1 -->
+      <p><u><i>Song 1</i></u></p>
+      <button class="btn music-btn" disabled onclick="playTrack('music1.mp3')">Play / Pause</button>
+      <!-- SONG 2 -->
+      <p><u><i>Song 2</i></u></p>
+      <button class="btn music-btn" disabled onclick="playTrack('Music2.mp3')">Play / Pause</button>
+      <!-- SONG 3 -->
+      <p><u><i>Song 3</i></u></p>
+      <button class="btn music-btn" disabled onclick="playTrack('Music3.mp3')">Play / Pause</button>
+    <!-- SINGLE AUDIO PLAYER -->
+    <audio id="currentTrack" loop preload="auto"></audio>
+    <!-- Stop BG Music Button -->
+    <button class="btn" onclick="stopBgMusic()">Stop Background Music ⏹️</button>
+    <button class="back" onclick="backToMenu()">⬅️ Back</button>
+  </div>
+</div>
+<script>
+function stopBgMusic(){
+  const bg = document.getElementById("bgMusic1");
+  if(bg && !bg.paused){
+    bg.pause();
+    bg.currentTime = 0; // reset to start
+  }
+}
+let musicUnlocked = false;
+const MUSIC_PASSWORD = "puku"; // 🔑 change if needed
+function unlockMusic(){
+  const input = document.getElementById("musicPass").value;
+  const msg = document.getElementById("passMsg");
+  if(input.toLowerCase() === MUSIC_PASSWORD.toLowerCase()){
+    musicUnlocked = true;
+    msg.innerText = "Unlocked 💖";
+    msg.style.color = "lightgreen";
+
+    // ENABLE SONG BUTTONS
+    document.querySelectorAll(".music-btn").forEach(btn=>{
+      btn.disabled = false;
+    });
+  } else {
+    msg.innerText = "Wrong password 😝";
+    msg.style.color = "pink";
+  }
+}
+function playTrack(src){
+  if(!musicUnlocked) return; // double safety
+
+  const audio = document.getElementById("currentTrack");
+  if(audio.src.includes(src) && !audio.paused){
+    audio.pause();
+  } else {
+    audio.src = src;
+    audio.play().catch(()=>{});
+  }
+}
+</script>
+<!-- LOVE LETTER SECTION -->
+<div id="loveLetter" class="screen" style="display:none;">
+  <div class="letter-card">
+    <h2>For You ❤️</h2><p>
+  <i><b>Dear Simu,</b></i><br><br>
+
+  <i>
+  Happy Birthday to the most annoying yet one of the most precious people in my life 🤍<br><br>
+
+  Pata hai, kuch log slowly life ka part ban jaate hain without even realizing it… aur tu unhi mein se ek hai.  
+  Pehle random chats thi, phir aadat ban gayi, aur ab tera ek text na aaye toh din ajeeb sa lagta hai.<br><br>
+
+  Tere saath conversations kabhi normal nahi hoti — kabhi faltu arguments, kabhi nonstop gossip, kabhi random VNs, aur kabhi bas bina reason ek dusre ko irritate karna.  
+  But honestly, those little moments are what make everything feel special.<br><br>
+
+  Tu shayad notice nahi karti, but tere saath baat karne se bohot baar mera mood theek hua hai.  
+  Even on bad days, tera presence somehow makes things lighter.  
+  Aur haan, jab tu “main thik hu” bolke topic change karti hai, tab samajh aa jata hai ki madam kuch toh chhupa rahi hai 😭<br><br>
+
+  So just remember this — tujhe har waqt strong banne ki zarurat nahi hai.  
+  There’s always someone who genuinely cares about your happiness, your peace, and even your stupid little problems.<br><br>
+
+  I hope iss birthday ke baad tera life aur zyada beautiful ho — less stress, more smiles, more success, aur woh sab kuch jo tu secretly chahti hai.  
+  Khud ko underestimate mat kiya kar, because tu jitna sochti hai usse bohot zyada achi hai.<br><br>
+
+  Stay the same dramatic, caring, irritating person because honestly… life would feel boring without that chaos 😭✨<br><br>
+
+  Once again, Happy Birthday in advance, Simu.  
+  Always keep smiling.
+  </i><br><br>
+
+  <b class="signature">— Aampanña 🤍</b>
+</p>
+  
+      
+    <button class="btn" onclick="backToMenu()">⬅️ Back</button>
+  </div>
+</div>
+
+<div id="stickers" class="screen">
+  <div class="card">
+
+    <h2>🎂 Happy Birthday 🎂</h2>
+
+    <!-- Single Image -->
+    <div class="birthday-image">
+      <img src="1.gif" width="220">
+    </div>
+
+    <!-- Birthday Message -->
+    <p id="caption">
+      Happy Birthday My Favorite Person ❤️🎉<br><br>
+      Wishing you endless happiness, smiles, love, and all the good things you deserve ✨🥺💖<br>
+      May your day be filled with laughter, surprises, and lots of cake 🎂🎊
+    </p>
+
+    <button class="btn" onclick="backToMenu()">⬅️ Back</button>
+    </button>
+
+  </div>
+</div>
+
+<style>
+.birthday-image{
+  margin:15px 0;
+}
+
+#caption{
+  font-size:16px;
+  line-height:1.6;
+  padding:10px;
+}
+
+.btn{
+  margin-top:15px;
+}
+</style>
+
+<!-- ================= PROPOSAL PAGE ================= -->
+<style>
+/* Proposal sticker animation */
+.propose-sticker img {
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.sticker-text {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: white;
+}
+</style>
+
+<!-- PROPOSAL QUESTION PAGE -->
+<div id="proposal" class="screen">
+  <div class="card">
+    <h2>Would you like to hangout with me someday? 💌</h2>
+
+    <button class="btn" onclick="yesProposal()">YES 💖</button>
+
+    <button class="btn" onmouseover="
+      this.style.position='absolute';
+      this.style.left = Math.random()*80+'%';
+      this.style.top = Math.random()*80+'%';
+    ">
+      NO 😏
+    </button>
+
+    <button class="back" onclick="backToMenu()">⬅️ Back</button>
+  </div>
+</div>
+
+<!-- EXTRA PROPOSING STICKER PAGE -->
+<div id="proposeSticker" class="screen">
+  <div class="card propose-sticker">
+    <h2>🎊 HangOut 🎊</h2>
+
+    <p class="sticker-text">Are you ready for some chaos and fun, Simran? 😏 </p>
+
+    <button class="btn" onclick="openSection('acceptedPage')">Absolutely</button>
+    <button class="back" onclick="backToMenu()">🔙</button>
+  </div>
+</div>
+<style>
+  #acceptedPage .card{
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}</style>
+
+<script>
+/* YES button function */
+function yesProposal() {
+  openSection('proposeSticker');
+}
+</script>
+<!-- AFTER PROPOSAL ACCEPTED -->
+<div id="acceptedPage" class="screen">
+  <div class="card">
+    <img src="Last.gif" width="220" alt="Accepted">
+
+    <h2>She said YES 💖</h2>
+
+    <p style="font-size:18px; line-height:1.6;">
+      You just made me smile like an idiot.<br>
+      Thank you for choosing me.<br>
+      I promise to cherish you, always. 🌸
+    </p>
+<button class="back" onclick="backToMenu()">⬅️ Back</button>
+  </div>
+</div>
+
+<!-- ================= FINAL SECTION ================= -->
+<div id="final" class="screen">
+  <div class="card">
+    <h1><b>Which Nickname would you like?🙂‍↕️</b></h1>
+    <p><i><u>Click NEXT to see the options!</u></i></p>
+    <button class="btn" onclick="showNicknameScreen()">NEXT ➡️</button>
+  </div>
+</div>
+
+<div id="nicknameScreen" class="screen" style="
+  overflow:hidden;
+  background:linear-gradient(
+  135deg,
+  #050816,
+  #0b1d3a,
+  #132b52,
+  #1e3f73,
+  #355c9a
+  );
+  position:fixed;
+  top:0;
+  left:0;
+  transform:none;
+  width:100vw;
+  height:100vh;
+  max-width:none;
+  max-height:none;
+">
+  <h2 style="position:absolute; top:10px; width:100%; text-align:center; color:white;">Catch the right nickname! 💕</h2>
+  <div id="nicknameArea" style="position:relative; width:100%; height:100vh;"></div>
+  <p id="nicknameNotification" style="position:absolute; bottom:20px; width:100%; text-align:center; color:white; font-size:18px;"></p>
+</div>
+<!-- FINAL MESSAGE / FIREWORKS SCREEN -->
+<div id="finalMessage" class="screen" style="
+background:
+linear-gradient(
+135deg,
+#050816,
+#0b1d3a,
+#132b52,
+#1e3f73,
+#355c9a
+);
+position:relative;
+overflow:visible;
+">
+
+  <!-- Container for text + input -->
+  <div id="finalContainer" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:90%; max-width:500px; text-align:center; z-index:999;">
+    <h1><b>💖 Congratulations 💖</b></h1>
+    <p style="font-size:22px;">You picked the perfect nickname! 💕<br>Thank you for being my Puku!😆 </p>
+
+    <input id="suggestInput" type="text" placeholder="Suggest a nickname for me 💕" 
+      style="padding:8px; border-radius:15px; border:none; font-size:16px; text-align:center; width:80%; margin-top:15px;">
+    <br><br>
+    <button class="btn" onclick="submitSuggestion()">Send 💌</button>
+    <p id="thankMsg" style="margin-top:15px; font-size:18px; color:white;"></p>
+    <button class="back" onclick="backToMenu()">🔙</button>
+  </div>
+
+  <!-- Fireworks will go here -->
+  <div id="fireworksContainer" style="position:absolute; inset:0; z-index:0;"></div>
+</div>
+
+<script>
+function submitSuggestion(){
+  const input = document.getElementById("suggestInput");
+  const thankMsg = document.getElementById("thankMsg");
+  const value = input.value.trim();
+  if(value==="") return;
+  thankMsg.innerText = "Thank you for your suggestion! 💌";
+  console.log("Nickname suggestion:", value); // placeholder for server
+  input.value="";
+}
+
+// Fireworks
+function startFinalFireworks(){
+  const fwContainer = document.getElementById("fireworksContainer");
+  const interval = setInterval(()=>{
+    const f = document.createElement("div");
+    f.className="firework";
+    f.style.left=Math.random()*100+"vw";
+    f.style.top=Math.random()*100+"vh";
+    f.style.width=f.style.height=(5+Math.random()*10)+"px";
+    f.style.background=`hsl(${Math.random()*360},100%,70%)`;
+    f.style.position="absolute";
+    f.style.borderRadius="50%";
+    fwContainer.appendChild(f);
+    setTimeout(()=>f.remove(),1000);
+  },150);
+  setTimeout(()=>clearInterval(interval),8000);
+}
+</script>
+
+
+<style>
+.correct-nick {
+  border: 0.05px solid green;   /* extremely thin */
+  border-radius: 25px;
+}
+.none-nick {
+  border: 0.05px solid red;   /* extremely thin */
+  border-radius: 25px;
+}
+.nickname {
+  position:absolute;
+  padding:10px 20px;
+  background:rgba(255,255,255,0.25);
+  color:white;
+  border-radius:25px;
+  font-size: 40px;
+  font-weight:bold;
+  cursor:pointer;
+  user-select:none;
+  transition:transform 0.2s;
+}
+.nickname:hover{
+  background:rgba(255,255,255,0.35);
+}
+.shake {
+  animation:shakeAnim 0.5s;
+}
+@keyframes shakeAnim {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(10px, 0px); }
+  50% { transform: translate(-10px, 0px); }
+  75% { transform: translate(10px, 0px); }
+  100% { transform: translate(0px, 0px); }
+}
+#nicknameScreen::before,
+#finalMessage::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(white 1px, transparent 1px);
+  background-size:40px 40px;
+  opacity:0.18;
+  pointer-events:none;
+}
+</style>
+
+<script>
+const nicknames = ["Simu","Madamé Ji","Saki","Nino","Babai","Tofu","Fifa","Zuzi","None Of These","Sushi"];
+const correctNicknames = ["Simu","Madamé Ji"];
+const none = "None Of These"
+function showNicknameScreen(){
+  hideAllScreens();
+  document.getElementById("nicknameScreen").style.display="block";
+  createNicknames();
+}
+function createNicknames(){
+  const area = document.getElementById("nicknameArea");
+  area.innerHTML="";
+
+  nicknames.forEach(name=>{
+    const nick = document.createElement("div");
+    nick.className="nickname";
+    nick.innerText=name;
+    if(name.toLowerCase() === none.toLowerCase()){
+    nick.classList.add("none-nick");
+  }
+    if(correctNicknames.includes(name)){
+      nick.classList.add("correct-nick");
+  }
+    nick.style.top=Math.random()*80+"vh";
+    nick.style.left=Math.random()*80+"vw";
+    area.appendChild(nick);
+
+    nick.addEventListener("click", () => {
+  if(correctNicknames.includes(name)){
+    // Show congrats message and nickname confirmation
+    openSection("finalMessage"); // your final message screen
+  } else if(name.toLowerCase() === none.toLowerCase()){
+    // 🔙 immediately
+    backToMenu();
+  } else {
+    // Shake the nickname area for incorrect choice
+    area.classList.add("shake");
+    setTimeout(()=> area.classList.remove("shake"), 2000);
+  }
+});
+
+    let dx=(Math.random()-0.5)*1.5;
+    let dy=(Math.random()-0.5)*1.5;
+    function moveNick(){
+      let top=parseFloat(nick.style.top);
+      let left=parseFloat(nick.style.left);
+      if(top+dy<0 || top+dy>90) dy=-dy;
+      if(left+dx<0 || left+dx>90) dx=-dx;
+      nick.style.top=(top+dy)+"vh";
+      nick.style.left=(left+dx)+"vw";
+      requestAnimationFrame(moveNick);
+    }
+    moveNick();
+  });
+}
+
+// Submit nickname suggestion
+function submitSuggestion(){
+  const input = document.getElementById("suggestInput");
+  const thankMsg = document.getElementById("thankMsg");
+  const value = input.value.trim();
+  if(value==="") return;
+  thankMsg.innerText = "Thank you for your suggestion! 💌";
+
+  console.log("Nickname suggestion:", value); // replace with server call if needed
+  input.value="";
+}
+
+// Hide all screens
+function hideAllScreens(){
+  document.querySelectorAll(".screen").forEach(s=>s.style.display="none");
+}
+
+// Fireworks
+function startFinalFireworks(){
+  const interval = setInterval(()=>{
+    const f = document.createElement("div");
+    f.className="firework";
+    f.style.left=Math.random()*100+"vw";
+    f.style.top=Math.random()*100+"vh";
+    f.style.width=f.style.height=(5+Math.random()*10)+"px";
+    f.style.background=`hsl(${Math.random()*360},100%,70%)`;
+    f.style.position="absolute";
+    f.style.borderRadius="50%";
+    document.getElementById("finalMessage").appendChild(f);
+    setTimeout(()=>f.remove(),1000);
+  },150);
+  setTimeout(()=>clearInterval(interval),8000);
+}
+</script>
+
+<script>
+/* Floating hearts */
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.className="heart";
+ const hearts = ["💙","🩵","✨","💫"];
+h.innerText = hearts[Math.floor(Math.random()*hearts.length)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(16+Math.random()*20)+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},500);
+
+/* Screen control */
+function hideAll(){
+  document.querySelectorAll(".screen").forEach(s=>s.style.display="none");
+}
+function showIntro(){ hideAll(); introScreen.style.display="block"; }
+function showMenu(){ hideAll(); menuScreen.style.display="block"; }
+function openSection(id){
+  hideAll();
+  document.getElementById(id).style.display="block";
+  if(id==="final") startFireworks();
+}
+function backToMenu(){ showMenu(); }
+
+/* Music */
+function toggleMusic(){
+  let m=document.getElementById("bgMusic");
+  if(m.paused) m.play(); else m.pause();
+}
+
+/* Fireworks */
+function startFireworks(){
+  document.getElementById("bgMusic").play();
+  setInterval(()=>{
+    let f=document.createElement("div");
+    f.className="firework";
+    f.style.left=Math.random()*100+"vw";
+    f.style.top=Math.random()*100+"vh";
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),1000);
+  },100);
+}
+</script>
+<script>
+// Floating hearts
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.className="heart";
+  const hearts = ["💙","🩵","✨","💫"];
+h.innerText = hearts[Math.floor(Math.random()*hearts.length)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(16+Math.random()*20)+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},500);
+// Hide all screens
+function hideAll(){ document.querySelectorAll(".screen").forEach(s=>s.style.display="none"); }
+function showIntro(){ hideAll(); introScreen.style.display="block"; }
+function showMenu(){ hideAll(); menuScreen.style.display="block"; }
+// Music functions
+function startMenuMusic(){ let music = document.getElementById("bgMusic1"); music.volume=1; music.play().catch(()=>{});}
+function playTrack(fileName){
+  const audio = document.getElementById("currentTrack");
+  if(audio.src.includes(fileName)){
+    if(audio.paused){audio.play().catch(()=>{});} else {audio.pause();}
+  } else {audio.src=fileName; audio.load(); audio.play().catch(()=>{});}
+}
+// Fireworks
+function startFinalFireworks(){
+  const fwContainer=document.getElementById("fireworksContainer");
+  const interval=setInterval(()=>{
+    const f=document.createElement("div");
+    f.className="firework";
+    f.style.left=Math.random()*100+"vw";
+    f.style.top=Math.random()*100+"vh";
+    f.style.width=f.style.height=(5+Math.random()*10)+"px";
+    f.style.background=`hsl(${Math.random()*360},100%,70%)`;
+    f.style.position="absolute";
+    f.style.borderRadius="50%";
+    fwContainer.appendChild(f);
+    setTimeout(()=>f.remove(),1000);
+  },150);
+  setTimeout(()=>clearInterval(interval),8000);
+}
+// Section control
+function openSection(id){ hideAll(); document.getElementById(id).style.display="block";}
+function backToMenu(){ showMenu(); }
+
+// Memories animation handled as before...
+// Stickers handled as before...
+// Proposal handled as before...
+// Nickname handled as before...
+</script>
+</body>
+</html>
